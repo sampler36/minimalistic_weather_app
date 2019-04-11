@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 6em;
+  color: #E9F2F1;
+  line-height: 0.8em;
+  text-align: right;
+}
+
+h1 span {
+  color: #FE4A73;
+}
+
+hr {
+  margin: 40px 0;
+  border-top: none;
+}
+
+p {
+  color: #E9F2F1;
+}
