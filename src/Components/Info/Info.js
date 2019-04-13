@@ -1,12 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Info.css';
 import bg from '../../img/bg-shape.svg';
 
-const Info = () => {
-
-  let [clickedCel, setClickedCel] = useState('');
-  let [clickedFah, setClickedFah] = useState('clicked');
-
+const Info = (props) => {
   return (
     <section>
       <img src={bg} alt='Background shape' id='bg' />
@@ -17,17 +13,19 @@ const Info = () => {
         <p>Your weather is currently showing in:</p>
         <div className='buttons'>
           <div className='btn'>
-            <button className={clickedCel} onClick={() => {
-              setClickedCel(clickedCel = 'clicked');
-              setClickedFah(clickedFah = '');
-            }}>C</button>
+            {props.tempSymbol === 'C' ?
+              <button className='clicked'>C</button>
+              :
+              <button onClick={props.setTempSymbol}>C</button>
+            }
             <p>Celsius</p>
           </div>
           <div className='btn'>
-            <button className={clickedFah} onClick={() => {
-              setClickedFah(clickedFah = 'clicked');
-              setClickedCel(clickedCel = '');
-            }}>F</button>
+            {props.tempSymbol === 'F' ?
+              <button className='clicked'>F</button>
+              :
+              <button onClick={props.setTempSymbol}>F</button>
+            }
             <p>Fahrenheit</p>
           </div>
         </div>
