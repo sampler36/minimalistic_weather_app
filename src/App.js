@@ -17,8 +17,8 @@ const App = () => {
   return (
     <main>
       <Info tempSymbol={tempSymbol} setTempSymbol={() => setTempSymbol(tempSymbol === 'F' ? 'C' : 'F')} />
-      <Country cities={cities[0]}/>
-      <Country cities={cities[1]}/>
+      <Country cities={cities[0]} tempSymbol={tempSymbol}/>
+      <Country cities={cities[1]} tempSymbol={tempSymbol}/>
     </main>
   );
 }

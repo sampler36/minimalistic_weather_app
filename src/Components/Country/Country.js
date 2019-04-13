@@ -7,6 +7,19 @@ import ru from '../../img/pic-2.jpg';
 import snow from '../../img/snow-icon.svg';
 
 const Country = (props) => {
+
+  let currentTemp = 0;
+
+  if (props.cities) {
+    let fahrenheit = parseInt(props.cities.main.temp);
+    let celsius = parseInt((fahrenheit - 32) * (5 / 9));
+    if (props.tempSymbol === 'F') {
+      currentTemp = fahrenheit;
+    } else {
+      currentTemp = celsius;
+    }
+  }
+
   return (
     <section>
       <div className='floater'>
@@ -16,7 +29,7 @@ const Country = (props) => {
             :
             <img src={snow} alt='Icon' />
           }
-          <p id='temp'>{props.cities ? parseInt(props.cities.main.temp) : ''}°</p>
+          <p id='temp'>{props.cities ? currentTemp : ''}°</p>
         </div>
         <p>{props.cities ? props.cities.weather[0].main.toUpperCase() : ''}</p>
       </div>
