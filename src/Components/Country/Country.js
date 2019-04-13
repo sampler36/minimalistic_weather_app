@@ -7,9 +7,9 @@ const Country = (props) => {
       <div className='floater'>
         <div className='icon-temp'>
           <img src={props.icon} alt='Icon' />
-          <p id='temp'>90°</p>
+          <p id='temp'>{props.cities ? parseInt(props.cities.main.temp) : ''}°</p>
         </div>
-        <p>SUNNY</p>
+        <p>{props.cities ? props.cities.weather[0].main.toUpperCase() : ''}</p>
       </div>
       <img src={props.img} alt='Country' id='country-img' />
       <div className='country'>
